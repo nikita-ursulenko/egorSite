@@ -1,0 +1,325 @@
+
+  /* Стили для экранов до 320px */
+@media only screen and (max-width: 320px) {
+    h1 {
+      font-size: 24px;
+    }
+    
+    h2 {
+      font-size: 20px;
+    }
+    
+    h3 {
+      font-size: 18px;
+    }
+    
+    p {
+      font-size: 14px;
+    }
+  }
+  
+  /* Стили для экранов от 321px до 786px */
+@media only screen and (min-width: 321px) and (max-width: 786px) {
+    h1 {
+      font-size: 30px;
+    }
+    
+    h2 {
+      font-size: 24px;
+    }
+    
+    h3 {
+      font-size: 20px;
+    }
+    
+    p {
+      font-size: 16px;
+    }
+  }
+  
+  /* Стили для экранов от 787px и более */
+@media only screen and (min-width: 787px) {
+    h1 {
+      font-size: 36px;
+    }
+    
+    h2 {
+      font-size: 30px;
+    }
+    
+    h3 {
+      font-size: 24px;
+    }
+    
+    p {
+      font-size: 18px;
+    }
+  }
+  
+  /*  стили для экранов с шириной до 768px здесь */
+@media only screen and (max-width: 768px) {
+    .goals {
+        &__block {
+            flex-direction: column;
+        }
+    }
+}
+/*от 650px*/
+@media only screen and (min-width: 650px) {
+    .footer__top {
+        &__left {
+            height: 400px;
+            .maps {
+                height: 100%;
+            }
+        }
+    }
+    .story {
+        &__left  {
+            width: 40%;
+        }
+        &__right {
+            width: 55%;
+        }
+    }
+}
+/*до 650px*/
+@media only screen and (max-width: 650px) {
+    .story {
+        flex-direction: column;
+        &__left {
+            text-align: center;
+            .button  {
+                margin: auto;
+                margin-top: 20px;
+            }
+        }
+        &__right {
+            width: 80%;
+            margin: auto;
+        }
+    }
+    .footer__top {
+        flex-direction: column-reverse;
+        &__left {
+            .maps {
+                height: 300px;
+                width: 80%;
+                margin: auto;
+            }
+        }
+        &__right {
+            text-align: center;
+            padding-bottom: 30px;
+        }
+    }
+    .footer__bottom {
+        &__left {
+            p {
+                text-align: start;
+            }
+        }
+        &__right {
+            p {
+                text-align: end;
+            }
+        }
+    }
+}
+/*от 570px до max*/
+@media only screen and (min-width: 570px) {
+    header {
+        .logo {
+            p {
+                padding-left: 20px;
+            }
+        }
+    }
+    nav {
+        .burger__menu {
+            display: none;
+        }
+        ul {
+            display: flex;
+            li {
+                a {
+                    padding: 0 15px;
+                    color: black;
+                }
+            }
+        }
+    }
+    .image {
+        &_container {
+            &__inner {
+                width: 40%;
+            }
+        }
+    }
+    .form {
+        form {
+            width: 60%;
+        }
+    }
+    .item {
+        &__text {
+            p {
+                text-align: start;
+            }
+        }
+        &__top {
+            flex-direction: row-reverse;
+            p {
+                margin: 0 auto 0 0;
+            }
+        }
+        &__bottom {
+            p {
+                text-align: end;
+                margin: 0 0 0 auto;
+            }
+        }
+
+    }
+    .reviews {
+        &__text {
+            p {
+                padding: 10px;
+                &::after {
+                    top: -30%;
+                }
+                &::before {
+
+                    bottom: -40%;
+                }
+            }
+        }
+    }
+}
+/*0 до 570px*/
+@media only screen and (max-width: 570px) {
+    header {
+        position: relative;
+        .logo {
+            flex-direction: column;
+        }
+    }
+    nav {
+        position: absolute;
+        top: 0;
+        right: 0;
+        .burger__menu {
+            display: flex;
+            justify-content: end;
+            transition: all 0.5s ease-in-out;
+            padding: 20px 20px 10px 0;
+        }
+        .burger__icon {
+            cursor: pointer;
+            transition: all 0.5s ease-in-out;
+            position: relative;
+            &.active {
+                transition: all 0.5s ease-in-out;
+                transform: rotate(45deg)
+            }
+            &.active .line:nth-child(1) {
+                transition: all 0.2s ease-in-out;
+                opacity: 0;
+            }
+            &.active .line:nth-child(2) {
+                transition: all 0.5s ease-in-out;
+                &::before {
+                    content: "";
+                    display: block;
+                    width: 30px;
+                    height: 3px;
+                    background-color: black;
+                    margin: 6px 0;
+                    top: 0;
+                    left: 0;
+                    transform: rotate(90deg)
+                }
+            }
+            &.active .line:nth-child(3) {
+                transition: all 0.2s ease-in-out;
+                opacity: 0;
+
+            }
+            &:not(.active) .line {
+                transition: all 0.5s ease-in-out;
+            }
+        }
+        
+        ul {
+            line-height: 3;
+            flex-direction: column;
+            background-color: #c60e3b;
+            display: none;
+            li {
+                a {
+                    padding: 0 15px 0 15px;
+                    display: block;
+                    height: 100%;
+                    width: 100%;
+                    color: white;
+                    &:hover {
+                        background: wheat;
+                        color: black;
+                    }
+                }
+            }
+        }
+    }
+    .item {
+        &__top {
+            flex-direction: column;
+        }
+        &__image {
+            margin: auto;
+        }
+        &__text {
+            margin-top: 20px;
+            p {
+                margin: auto;
+            }
+        }
+        &__bottom {
+            flex-direction: column;
+            margin: auto;
+        }
+
+    }
+    .reviews {
+        &__text {
+            p {
+                &::after {
+                    top: -30%;
+                }
+                &::before {
+
+                    bottom: -40%;
+                }
+            }
+        }
+    }
+    .image {
+        &_container {
+            &__inner {
+                width: 58%;
+            }
+        }
+    }
+    .form {
+        &__container {
+            flex-direction: column;
+
+        }
+        &__left {
+            text-align: center;
+            padding-bottom: 30px;
+        }
+        form {
+            width: 70%;
+        }
+    }
+}

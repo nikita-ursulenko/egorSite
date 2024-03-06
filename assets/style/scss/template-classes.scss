@@ -1,0 +1,64 @@
+// Основной цвет (Primary Color) - #007bff
+$primary-color: #c60e3b; // Кнопки, акценты, ссылки
+// Второстепенный цвет (Secondary Color) - #6c757d
+$secondary-color: #d4d5d6; // Фоны, обводки, дополнительные элементы интерфейсаd
+// Цвет акцента (Accent Color) - #FF5733
+$accent-color: #FF5733; // Выделение ключевых элементов, акцентные элементы интерфейса
+// Цвет фона (Background Color) - #ffffff
+$background-color: #e3e3e3; // Фоновый цвет всей страницы
+.active__nav {
+    display: flex;
+}
+section {
+    padding: 30px 0;
+}
+.container__L {
+    max-width: 1024px;
+    margin: auto;
+}
+a {
+    text-decoration: none;
+    $text-color: white;
+}
+.button { // кнопка
+    width: 100px;
+    height: 40px;
+    text-align: center;
+    background-color: $primary-color;
+    display: inline-block;
+    border: 2px solid $primary-color; /* Установка прозрачной рамки */
+    outline: none; /* Убираем стандартное контурное оформление */
+    cursor: pointer;
+    color: $background-color;
+    margin-top: 20px;
+    &:hover {
+        border: 2px solid black;
+    }
+    &:active {
+        background-color: $accent-color;
+        border: 2px solid black;
+    }
+    a {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: $background-color;
+    }
+}
+.radio_select {
+    background-color: $primary-color;
+    transition: all 0.4s ease;
+    color: $background-color;
+}
+.p_above {
+    font-weight: bold;
+    line-height: 2;
+}
+  
+.hidden {
+    opacity: 0;
+    pointer-events: none; /* Исключение элемента из пользовательского взаимодействия */
+    display: none; /* Скрытие элемента после завершения анимации */
+}
