@@ -128,10 +128,15 @@
 }
 /*от 570px до max*/
 @media only screen and (min-width: 570px) {
+    .modal {
+        &_content {
+            padding: 5%;
+        }
+    }
     header {
         .logo {
             p {
-                padding-left: 20px;
+                padding-left: 15px;
             }
         }
     }
@@ -187,17 +192,44 @@
                 padding: 10px;
                 &::after {
                     top: -30%;
+                    left: 0;
                 }
                 &::before {
-
+                    right: 0;
                     bottom: -40%;
                 }
+            }
+        }
+        
+    }
+    .gallery__inner {
+        .left {
+            flex-direction: row-reverse;
+            &__text {
+                p {
+                    margin: 0 0 0 auto;
+                }
+            }
+        }
+        .item__image {
+            flex: 4;
+        }
+        .item__text {
+            p {
+                width: 80%;
             }
         }
     }
 }
 /*0 до 570px*/
 @media only screen and (max-width: 570px) {
+    .modal {
+        &_content {
+            padding: 5% 10%;
+            overflow: scroll;
+            -webkit-overflow-scrolling: touch;
+        }
+    }
     header {
         position: relative;
         .logo {
@@ -289,15 +321,37 @@
         }
 
     }
+    .gallery__inner {
+        .reviews {
+            flex-direction: column;
+            &__text {
+                p {
+                    margin: auto;
+                }
+            }
+            &__image {
+                margin: auto;
+                margin-top: 10%;
+            }
+        }
+        .item {
+            &__text {
+                p {
+                    width: 95%;
+                }
+            }
+        }
+    }
     .reviews {
         &__text {
             p {
                 &::after {
-                    top: -30%;
+                    top: -10%;
+                    left: -15%;
                 }
                 &::before {
-
-                    bottom: -40%;
+                    right: -15%;
+                    bottom: -30%;
                 }
             }
         }
@@ -320,6 +374,27 @@
         }
         form {
             width: 70%;
+        }
+    }
+    .footer__bottom__inner {
+        flex-direction: column;
+        line-height: 1.5;
+    }
+}
+
+
+@media only screen and (max-height: 500px) {
+    .modal {
+        &_content {
+            padding: 5% 10%;
+            height: 80vh;
+        }
+    }
+}
+@media only screen and (max-width: 300px) { 
+    .modal {
+        &_content {
+            height: 80vh;
         }
     }
 }
